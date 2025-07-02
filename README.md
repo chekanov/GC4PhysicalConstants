@@ -18,7 +18,7 @@ Bibtex entry:
     eprint = "2507.00225",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph",
-    reportNumber = "HEP-ANL-197373, June 26, 2025",
+    reportNumber = "HEP-ANL-197373",
     month = "6",
     year = "2025"
 }

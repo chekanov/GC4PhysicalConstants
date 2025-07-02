@@ -50,7 +50,7 @@ The data listing does not have precision constraints applied. This means  |predi
 
 ## Note
 
-The file "standard_model_snippets.json.gz" is referred to as the *rho-meson snippet* dataset, since we use the rho-particle for removing units and standardizing masses. This particle must not be fundamental, because using any fundamental mass would exclude it from the dataset. We cannot use the Planck scale mass due to its extremely large value for processing (limitted only 10^16). However, we are open to using other non-fundamental particles as well.
+The file "standard_model_snippets.json.gz" is referred to as the *rho-meson snippet listing*, since we use the rho-particle for removing units and standardizing masses. This particle must not be fundamental, because using any fundamental mass would exclude it from the dataset. We cannot use the Planck scale mass due to its extremely large value for processing (limitted by the maximum value of 10^16). However, we are open to using other non-fundamental particles as well.
 
 We are constantly improving this set of analytic snippets as more CPU power becomes available. Therefore, the number of snippets above the rank 15 may be larger than what was presented in the listings of the original paper. The differences mainly affect the least precise constants of the Standard Model.
 

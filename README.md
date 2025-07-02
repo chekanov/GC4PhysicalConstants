@@ -43,10 +43,10 @@ Here, ```data``` is a dictionary where the keys range from 6 to 70, representing
 ```
 [equation,error,predicted,target]
 ```
-where "equation" is the symbolic equation (using the notation close to LaTeX), "error" is the obtained uncertainty (expressed as a percentage to the target value), "predicted" is the predicted value, and 
-"target" is the actual value of the constant.  There are more than 83,000 analytic snippets. All duplicate entries have been removed. 
+where ```equation``` is the symbolic equation (using the notation close to LaTeX), ```error``` is the obtained uncertainty (expressed as a percentage to the target value), ```predicted``` is the predicted value, and 
+```target``` is the actual value of the constant.  There are more than 83,000 analytic snippets. All duplicate entries have been removed. 
 
-The data listing does not have precision constraints applied. This means  |predicted - target| difference is always within the measured uncertainty of the target value as defined by the Standard Model. The limitation of  1% relative precision as in the in the original publication was not used.
+The data listing does not have precision constraints applied. This means  ```|predicted - target|``` difference is always within the measured uncertainty of the target value as defined by the Standard Model. The limitation of  1% relative precision as in the in the original publication was not used.
 
 ## Note
 

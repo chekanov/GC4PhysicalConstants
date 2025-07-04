@@ -26,9 +26,21 @@ Bibtex entry:
 
 ---
 
+## Downloading the dataset
+
+The main file for download is called "standard_model_snippets.json.gz". It is a Python dictionary file in the JSON format, after gzip compression. 
+The file contains analytic expressions up to the rank 70. One can download it using  the "wget" or "curl" programs like this:
+
+```
+wget https://github.com/chekanov/GC4PhysicalConstants/raw/refs/heads/main/standard_model_snippets.json.gz
+```
+
+
+---
+
 ## How to Use the Files in This Repository
 
-All analytic expressions up to rank 70 are organized in a dictionary and stored in a compressed JSON file. Here's a Python example of how to read such files:
+Here's a Python example of how to read such files:
 
 ```python
 import gzip

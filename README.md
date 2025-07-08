@@ -59,9 +59,9 @@ where ```equation``` is the symbolic equation (using the notation close to LaTeX
 
 The data listing does not have precision constraints applied. This means  ```|predicted - target|``` difference is always within the measured uncertainty of the target value as defined by the Standard Model. The limitation of  1% relative precision as in the in the original publication was not used.
 
-## Using data with units (without rescaling)
+## Using data with mass units
 
-The GC analysis was also performed on the SM inputs without normalization of masses by the rho(770). In this case, the vast majority of snippets (>95%) do not pass dimensional analysis, and the snippets for the electron mass cannot be recovered due to the very large precision of the electron mass. Still, there are several interesting relations that pass dimensional analysis. However, they can also be recovered in the original analysis with the rescaled masses.
+The GC analysis was also performed on the SM inputs without normalization of masses by the rho(770). In this case, the vast majority of snippets (>95%) do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Still, there are several interesting relations that pass dimensional analysis. However, they can also be recovered in the original analysis with the rescaled masses.
 
 
 ## Note

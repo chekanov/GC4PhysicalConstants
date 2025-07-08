@@ -65,8 +65,7 @@ The GC analysis was also performed on the SM inputs without normalization of mas
 
 ## Note
 
-The file "standard_model_snippets.json.gz" is referred to as the *rho-meson snippet listing*, since we use the rho-particle for removing mass units and for error smoothing. The latter  
-implies reducing the variability of errors and making them more uniform. This particle must not be fundamental, because using any fundamental mass would exclude it from the dataset. We cannot use the Planck scale mass due to its extremely large value for genetic computing (limitted by the maximum value of 10^12). However, we are open to using other non-fundamental particles as well.
+The file "standard_model_snippets.json.gz" is referred to as the *rho-meson snippet listing*, since we use the rho-particle for removing mass units and for error smoothing. The latter implies reducing the variability of errors and making them more uniform. This particle must not be fundamental, because using any fundamental mass would exclude it from the dataset. We cannot use the Planck scale mass due to its extremely large value for genetic computing (limitted by the maximum value of 10^12). However, we are open to using other non-fundamental particles as well.
 
 We are constantly improving this set of analytic snippets as more CPU power becomes available. Therefore, the number of snippets above the rank 15 may be larger than what was presented in the listings of the original paper. The differences mainly affect the least precise constants of the Standard Model.
 

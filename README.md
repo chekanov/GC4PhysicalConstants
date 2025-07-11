@@ -39,7 +39,7 @@ wget https://github.com/chekanov/GC4PhysicalConstants/raw/refs/heads/main/standa
 
 ## How to Use the Files in This Repository
 
-Here's a Python example of how to read thsi compressed JSON file:
+Here's a Python example of how to read this compressed JSON file:
 
 ```python
 import gzip

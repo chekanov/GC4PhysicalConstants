@@ -18,6 +18,7 @@ Bibtex entry:
     eprint = "2507.00225",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph"
+     reportNumber = "HEP-ANL-197373",
     month = "6",
     year = "2025"
 }
@@ -47,14 +48,16 @@ import json
 jsonfilename = "standard_model_snippets.json.gz"
 with gzip.open(jsonfilename, 'r') as fin:
     data = json.loads(fin.read().decode('utf-8'))
+    print(data) # print data if you need
 ```
 Here, ```data``` is a dictionary where the keys range from 6 to 70, representing analytic ranks. Each value associated with a key is a list structured as follows:
 
 ```
-[equation,error,predicted,target]
+[equation,error,predicted,target,pass]
 ```
 where ```equation``` is the symbolic equation (using the notation close to LaTeX), ```error``` is the obtained uncertainty (expressed as a percentage to the target value), ```predicted``` is the predicted value, and 
-```target``` is the actual value of the constant.  There are more than 83,000 analytic snippets. All duplicate entries have been removed. 
+```target``` is the actual value of the constant.  The variable ```pass``` is either 0 (do not pass dimensional analysis, if masses are replaced with the orinal masses), or 1  (pass the dimensional analysis). 
+There are more than 83,400 analytic snippets. All duplicate entries have been removed. 
 
 The data listing does not have precision constraints applied. This means  ```|predicted - target|``` difference is always within the measured uncertainty of the target value as defined by the Standard Model. The limitation of  1% relative precision as in the in the original publication was not used.
 

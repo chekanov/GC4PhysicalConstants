@@ -63,7 +63,7 @@ The data listing does not have precision constraints applied. This means  ```|pr
 
 ## Using data with mass units
 
-The GC analysis was also performed on the SM inputs without normalization of masses by the rho(770). In this case, the vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Still, there are several interesting relations that pass dimensional analysis. However, they can also be recovered in the original analysis with the rescaled masses.
+As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is somewhat less intresting. We can send the file without rescaled masses by requests.
 
 ## Notes
 

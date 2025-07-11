@@ -6,7 +6,8 @@ This repository contains analytic snippets generated through generic computation
 
 If you use these data with analytic functions, please cite the following work:
 
-> **"Discovering the Underlying Analytic Structure within Standard Model Constants Using Artificial Intelligence"**  
+> **"Discovering the Underlying Analytic Structure
+> within Standard Model Constants Using Artificial Intelligence"**  
 > S. V. Chekanov and H. Kjellerstrand, HEP-ANL-197373 (2025).  
 > [arXiv:2507.00225](https://arxiv.org/abs/2507.00225) (Submitted to a journal)
 
@@ -28,7 +29,7 @@ Bibtex entry:
 
 ## Downloading the dataset
 
-The main file for download is called ```standard_model_snippets.json.gz```. It is a Python dictionary file in the JSON format, after gzip compression. 
+The main file for download is called ```standard_model_snippets.json.gz```. It is a dictionary file in the JSON format, after gzip compression. 
 The file contains analytic expressions up to the rank 70. One can download it using  the ```wget``` or ```curl``` programs like this:
 
 ```

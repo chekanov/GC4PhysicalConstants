@@ -6,8 +6,7 @@ This repository contains analytic snippets generated through generic computation
 
 If you use these data with analytic functions, please cite the following work:
 
-> **"Discovering the Underlying Analytic Structure
-> within Standard Model Constants Using Artificial Intelligence"**  
+> **"Discovering the Underlying Analytic Structure within Standard Model Constants Using Artificial Intelligence"**  
 > S. V. Chekanov and H. Kjellerstrand, HEP-ANL-197373 (2025).  
 > [arXiv:2507.00225](https://arxiv.org/abs/2507.00225) (Submitted to a journal)
 
@@ -15,7 +14,8 @@ Bibtex entry:
 ```bibtex
 @article{Chekanov:2025wzw,
     author = "Chekanov, S. V. and Kjellerstrand, H.",
-    title = "{Discovering the underlying analytic structure within Standard Model constants using artificial intelligence}",
+    title = "{Discovering the underlying analytic structure
+    within Standard Model constants using artificial intelligence}",
     eprint = "2507.00225",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph",

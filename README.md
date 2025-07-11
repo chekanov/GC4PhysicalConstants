@@ -48,7 +48,7 @@ with gzip.open(jsonfilename, 'r') as fin:
     data = json.loads(fin.read().decode('utf-8'))
     print(data) # print data if you need
 ```
-Here, ```data``` is a Pyhon dictionary, where the keys range from 6 to 70, representing analytic ranks. If you use other programs, simply ```gunzip''' this JSON file and read it as a text file.
+Here, ```data``` is a Pyhon dictionary, where the keys range from 6 to 70, representing analytic ranks. If you use other programs, simply ```gunzip``` this JSON file and read it as a text file.
 
 Each value associated with a key is a list structured as follows:
 
@@ -69,7 +69,7 @@ As a test, the GC analysis was also performed on the Standard Model inputs witho
 
 (2) It should be emphasized that the presence of the rho-meson mass  (or any other particle masses used for obtaining dimensionless constants) should be considered a handy method for deriving short relationships in GC. It is an auxiliary parameter. The final theory can be free of this constant after successful variable substitutions.  One can convert all relations to the proper masses (in GeV or MeV) using Table 3 or 4 of the preprint. 
 
-(3) We are constantly improving this set of analytic snippets as more CPU power becomes available. Therefore, the number of snippets above the rank 15 may be larger than what was presented in the listings of the original paper. The differences mainly affect the least precise constants of the Standard Model.
+(3) We are constantly improving this set of analytic snippets as more CPU power becomes available. Therefore, the number of snippets above the rank 15 may be (slightly) larger than what was presented in the listings of the original paper. The differences mainly affect the least precise constants of the Standard Model.
 
 ---
 

@@ -7,7 +7,7 @@ This repository contains analytic snippets generated through generic computation
 If you use these data with analytic functions, please cite the following work:
 
 > **"Discovering the Underlying Analytic Structure within Standard Model Constants Using Artificial Intelligence"**  
-> S. V. Chekanov and H. Kjellerstrand, HEP-ANL-197373, June 26, (2025).  
+> S. V. Chekanov and H. Kjellerstrand, HEP-ANL-197373 (2025).  
 > [arXiv:2507.00225](https://arxiv.org/abs/2507.00225) (Submitted to a journal)
 
 Bibtex entry:
@@ -48,7 +48,9 @@ with gzip.open(jsonfilename, 'r') as fin:
     data = json.loads(fin.read().decode('utf-8'))
     print(data) # print data if you need
 ```
-Here, ```data``` is a Pyhon dictionary, where the keys range from 6 to 70, representing analytic ranks. Each value associated with a key is a list structured as follows:
+Here, ```data``` is a Pyhon dictionary, where the keys range from 6 to 70, representing analytic ranks. If you use other programs, simply ```gunzip''' this JSON file and read it as a text file.
+
+Each value associated with a key is a list structured as follows:
 
 ```
 [equation,error,predicted,target,pass]

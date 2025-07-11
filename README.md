@@ -2,7 +2,7 @@
 
 **Genetic Computing for Physical Constants using AI**
 
-This repository contains analytic expressions with relationships among the fundamental constants of the Standard Model. These expressions are created through generic computation (GC), which is part of the artificial intelligence (AI) field. The goal of this library is to identify analytic patterns and relationships among fundamental physical constants, or to use these expressions in constructing models with a minimal number of free parameters. These data can serve as inputs for several AI techniques, including generative AI algorithms, for the analysis of patterns or structures that may reflect underlying relationships between Stanadrd Model parameters in high-dimensional functional space.
+This repository contains analytic expressions with relationships among the fundamental constants of the Standard Model. These expressions are created through generic computation (GC), which is part of the artificial intelligence (AI) field. The goal of this library is to identify analytic patterns and relationships among fundamental physical constants, or to use these expressions in constructing models with a minimal number of free parameters. These data can serve as inputs for several AI techniques, including generative AI algorithms, for the analysis of patterns or structures that may reflect underlying relationships between Standard Model parameters in high-dimensional functional space.
 
 If you use these data with analytic functions, please cite the following work:
 
@@ -64,7 +64,7 @@ where ```equation``` is the symbolic equation (using the notation close to LaTeX
 
 ## Using data with mass units
 
-As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is somewhat less intresting. We can send the file without rescaled masses by requests.
+As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is less intresting. We can send the file without rescaled masses by requests.
 
 ## Notes
 

@@ -10,8 +10,9 @@ If you use these data with analytic functions, please cite the following work:
 > S. V. Chekanov and H. Kjellerstrand, HEP-ANL-197373 (2025).  
 > [arXiv:2507.00225](https://arxiv.org/abs/2507.00225) (Submitted to a journal)
 
-Bibtex entry:
-```bibtex
+<details>
+  <summary><i>View BibTex Entry</i></summary>
+    ```bibtex
 @article{Chekanov:2025wzw,
     author = "Chekanov, S. V. and Kjellerstrand, H.",
     title = "{Discovering the underlying analytic structure
@@ -24,6 +25,7 @@ Bibtex entry:
     year = "2025"
 }
 ```
+</details>
 
 ---
 

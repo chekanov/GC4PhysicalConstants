@@ -2,7 +2,7 @@
 
 **Genetic Computing for Physical Constants using AI**
 
-This repository contains analytic snippets connecting Standard Model fundamental constants. They are created through generic computation (GC), which is part of the artificial intelligence (AI) field. The goal of this library is (1) to identify analytic patterns and relationships among fundamental physical constants, or (2) to use these relationships in constructing models with a minimal number of free parameters. These data can serve as inputs for several AI techniques, including generative AI algorithms, for the analysis of patterns or structures that may reflect underlying relationships between Stanadrd Model parameters in high-dimensional functional space.
+This repository contains analytic expressions with relationships among the fundamental constants of the Standard Model. These expressions are created through generic computation (GC), which is part of the artificial intelligence (AI) field. The goal of this library is to identify analytic patterns and relationships among fundamental physical constants, or to use these expressions in constructing models with a minimal number of free parameters. These data can serve as inputs for several AI techniques, including generative AI algorithms, for the analysis of patterns or structures that may reflect underlying relationships between Stanadrd Model parameters in high-dimensional functional space.
 
 If you use these data with analytic functions, please cite the following work:
 
@@ -57,8 +57,7 @@ Each value associated with a key is a list structured as follows:
 [equation,error,predicted,target,pass]
 ```
 where ```equation``` is the symbolic equation (using the notation close to LaTeX), ```error``` is the obtained uncertainty (expressed as a percentage to the target value), ```predicted``` is the predicted value, and 
-```target``` is the actual value of the constant.  The variable ```pass``` is either 0 (do not pass dimensional analysis, if masses are replaced with the orinal masses), or 1  (pass the dimensional analysis). 
-There are more than 83,400 analytic snippets. All duplicate entries have been removed. Note that  ```|predicted - target|``` difference is always within the measured uncertainty of the target value as defined by the Standard Model. The requirement of 1% for relative precision, as was set in the original paper, is not used.
+```target``` is the actual value of the constant. The symbolic relations contain up to 2 variables. The variable ```pass``` is either 0 (do not pass dimensional analysis, if masses are replaced with the orinal masses), or 1  (pass the dimensional analysis). There are more than 83,400 analytic snippets. All duplicate entries have been removed. Note that  ```|predicted - target|``` difference is always within the measured uncertainty of the target value as defined by the Standard Model. The requirement of 1% for relative precision, as was set in the original paper, is not used.
 
 ## Using data with mass units
 

@@ -2,7 +2,7 @@
 
 **Genetic Computing for Physical Constants using AI**
 
-This repository contains analytic snippets generated through generic computation (GC) for future AI-based analysis. The goal is to identify analytic patterns and relationships among fundamental physical constants, or to use these relationships in constructing models with a minimal number of free parameters. These data can serve as inputs for several AI techniques, including generative AI algorithms, for the analysis of patterns or structures that may reflect underlying relationships in high-dimensional functional space.
+This repository contains analytic snippets connecting Standard Model fundamental constants. They are created through generic computation (GC), which is part of the artificial intelligence (AI) field. The goal of this library is (1) to identify analytic patterns and relationships among fundamental physical constants, or (2) to use these relationships in constructing models with a minimal number of free parameters. These data can serve as inputs for several AI techniques, including generative AI algorithms, for the analysis of patterns or structures that may reflect underlying relationships between Stanadrd Model parameters in high-dimensional functional space.
 
 If you use these data with analytic functions, please cite the following work:
 

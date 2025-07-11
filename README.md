@@ -17,8 +17,8 @@ Bibtex entry:
     title = "{Discovering the underlying analytic structure within Standard Model constants using artificial intelligence}",
     eprint = "2507.00225",
     archivePrefix = "arXiv",
-    primaryClass = "hep-ph"
-     reportNumber = "HEP-ANL-197373",
+    primaryClass = "hep-ph",
+    reportNumber = "HEP-ANL-197373",
     month = "6",
     year = "2025"
 }

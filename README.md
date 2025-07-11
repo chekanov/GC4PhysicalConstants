@@ -12,6 +12,7 @@ If you use these data with analytic functions, please cite the following work:
 
 <details>
   <summary><i>View BibTex Entry</i></summary>
+
 ```bibtex
 @article{Chekanov:2025wzw,
     author = "Chekanov, S. V. and Kjellerstrand, H.",

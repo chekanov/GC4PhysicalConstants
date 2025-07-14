@@ -64,7 +64,7 @@ where ```equation``` is the symbolic equation (using the notation close to LaTeX
 
 ## Using data with mass units
 
-As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is less intresting. We can send the file without rescaled masses by requests.
+As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. See the file ```standard_model_snippets_original.json.gz```. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is less intresting. We can send the file without rescaled masses by requests.
 
 ## Notes
 

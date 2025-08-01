@@ -30,7 +30,7 @@ If you use these data with analytic functions, please cite the following work:
 
 ---
 
-## Downloading the dataset
+## Using JSON data
 
 The main file for download is called ```standard_model_snippets.json.gz```. It is a dictionary file in the JSON format, after gzip compression. 
 The file contains analytic expressions up to the rank 70. One can download it using  the ```wget``` or ```curl``` programs like this:
@@ -40,8 +40,6 @@ wget https://github.com/chekanov/GC4PhysicalConstants/raw/refs/heads/main/standa
 ```
 
 ---
-
-## How to Use the Files in This Repository
 
 Here's a Python example of how to read this compressed JSON file:
 
@@ -62,9 +60,30 @@ Each value associated with a key is a list structured as follows:
 where ```equation``` is the symbolic equation (using the notation close to LaTeX), ```error``` is the obtained uncertainty (expressed as a percentage to the target value), ```predicted``` is the predicted value, and 
 ```target``` is the actual value of the constant. The symbolic relations contain up to 2 variables. The variable ```pass``` is either 0 (do not pass dimensional analysis, if masses are replaced with the orinal masses), or 1  (pass the dimensional analysis). There are more than 83,400 analytic snippets. All duplicate entries have been removed. Note that  ```|predicted - target|``` difference is always within the measured uncertainty of the target value as defined by the Standard Model. The requirement of 1% for relative precision, as was set in the original paper, is not used.
 
+## Using TXT data
+
+Much larger datasets is avaliable in the form of compressed TXT files. They are:
+
+``` python
+standard_model_snippets.txt.gz          # snippets afrer the rho-meson re-scaling
+standard_model_snippets_no_norm.txt.gz  # snippets without the rho-meson re-scaling
+```
+Each line contains a snippet using the PiCAT notations for mathematical functions. On Linux, you can analyze such files without decompression like this:
+
+``` bash
+zgrep "m_u = " standard_model_snippets_no_norm.txt.gz
+```
+search for the expressions for the masses of UP-quarks. Here is another example:
+
+``` bash
+zgrep "m_u = " standard_model_snippets_no_norm.txt.gz | grep "m_H"
+```
+search for the expressions for the masses of UP-quarks, which also contain the mass of the Higgs boson.
+
+
 ## Using data with mass units
 
-As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. See the file ```standard_model_snippets_original.json.gz```. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is less intresting. We can send the file without rescaled masses by requests.
+As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. See the file ```standard_model_snippets_original.json.gz``` or ```standard_model_snippets_no_norm.txt.gz```. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is less intresting. We can send the file without rescaled masses by requests.
 
 ## Notes
 

@@ -64,21 +64,21 @@ where ```equation``` is the symbolic equation (using the notation close to LaTeX
 
 Much larger datasets is avaliable in the form of compressed TXT files. They are:
 
-``` python
+``` bash
 standard_model_snippets.txt.gz          # snippets afrer the rho-meson re-scaling
 standard_model_snippets_no_norm.txt.gz  # snippets without the rho-meson re-scaling
 ```
 Each line contains a snippet using the PiCAT notations for mathematical functions. On Linux, you can analyze such files without decompression like this:
 
 ``` bash
-zgrep "m_u = " standard_model_snippets_no_norm.txt.gz
+zgrep "m_u = " standard_model_snippets.txt.gz
 ```
-search for the expressions for the masses of UP-quarks. Here is another example:
+search for the expressions for the mass of the UP-quark. Here is another example:
 
 ``` bash
-zgrep "m_u = " standard_model_snippets_no_norm.txt.gz | grep "m_H"
+zgrep "m_u = " standard_model_snippets.txt.gz | grep "m_H"
 ```
-search for the expressions for the masses of UP-quarks, which also contain the mass of the Higgs boson.
+search for the expressions for the mass of the UP-quark, which must contain the mass of the Higgs boson (m_H).
 
 
 ## Using data with mass units

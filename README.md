@@ -62,7 +62,7 @@ where ```equation``` is the symbolic equation (using the notation close to LaTeX
 
 ## Using TXT data
 
-Much larger datasets is avaliable in the form of compressed TXT files. They are:
+Much larger datasets are avaliable in the form of compressed TXT files. They are:
 
 ``` bash
 standard_model_snippets.txt.gz          # snippets afrer the rho-meson re-scaling
@@ -73,12 +73,14 @@ Each line contains a snippet using the PiCAT notations for mathematical function
 ``` bash
 zgrep "m_u = " standard_model_snippets.txt.gz
 ```
-search for the expressions for the mass of the UP-quark. Here is another example:
+search for the expressions for the mass of the UP-quark. 
+
+Here is another example:
 
 ``` bash
 zgrep "m_u = " standard_model_snippets.txt.gz | grep "m_H"
 ```
-search for the expressions for the mass of the UP-quark, which must contain the mass of the Higgs boson (m_H).
+search for the expressions for the mass of the UP-quark, which must contain the mass of the Higgs boson (m_H). The names of the constants can be found in the original preprint.
 
 
 ## Using data with mass units

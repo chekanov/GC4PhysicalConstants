@@ -82,6 +82,10 @@ zgrep "m_u = " standard_model_snippets.txt.gz | grep "m_H"
 ```
 search for the expressions for the mass of the UP-quark, which must contain the mass of the Higgs boson (m_H). The names of the constants can be found in the original preprint.
 
+## Using data with alternative mass rescaling
+
+This repository also contains snippets where phi(1020) meson mass was used for rescaling the PDG masses, instead of the rho(770) meons. The file is called ```standard_model_snippets_phi1020.txt.gz```. 
+Note that this method of rescaling does not affect snippets which already pass the dimensional analysis. As in the case of the rho(770) method, one can get rid of this axilary parameter using a simple substitution using small-rank expressions.
 
 ## Using data with mass units
 

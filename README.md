@@ -84,16 +84,20 @@ search for the expressions for the mass of the UP-quark, which must contain the 
 
 ## Using data with alternative mass rescaling
 
-This repository also contains snippets where phi(1020) meson mass was used for rescaling the PDG masses, instead of the rho(770) meons. The file is called ```standard_model_snippets_phi1020.txt.gz```. 
+This repository also contains snippets where the phi(1020) meson mass was used for rescaling the PDG masses, instead of the rho(770) meson mass. The file is called ```standard_model_snippets_phi1020.txt.gz```. 
 Note that this method of rescaling does not affect snippets which already pass the dimensional analysis. As in the case of the rho(770) method, one can get rid of this axilary parameter using a simple substitution using small-rank expressions.
 
 ## Using data with mass units
 
 As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. See the file ```standard_model_snippets_original.json.gz``` or ```standard_model_snippets_no_norm.txt.gz```. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is less intresting. We can send the file without rescaled masses by requests.
 
+
 ## Notes
 
-(1) The file "standard_model_snippets.json.gz" is referred to as the *rho-meson snippet listing* since it uses the rho-meson mass for removing mass units and for error smoothing. The latter implies reducing the variability of errors and making them more uniform. This particle used for rescaling must not be fundamental, because using any fundamental mass would automatically exclude it from the dataset. We cannot use the Planck scale mass due to its extremely large value for genetic computing (limitted by the maximum value of 10^12). However, we are open to using other non-fundamental particles as well.
+(1) The files ```standard_model_snippets.json.gz``` and ```standard_model_snippets.txt.gz```  are  referred to as the *rho-meson snippet listing* since it uses the rho-meson mass for removing mass units and for error smoothing. The latter implies reducing the variability of errors and making them more uniform. This particle used for rescaling must not be fundamental, because using any fundamental mass would automatically exclude it from the dataset. We cannot use the Planck scale mass due to its extremely large value for genetic computing (limitted by the maximum value of 10^12). However, we are open to using other non-fundamental particles as well.
+
+The file ```standard_model_snippets_phi1020.txt.gz``` is referred to as the *phi-meson snippet listing* since it uses the phi(1020)-meson mass.
+
 
 (2) It should be emphasized that the presence of the rho-meson mass (or any other non-fundamental particle used to obtain dimensionless constants) is merely a convenient method for deriving relationships in GC without violating dimensional consistency. It serves as an auxiliary parameter. In the final model or theory, the rho-meson mass must disappear after appropriate variable substitutions. All obtained relations can be converted to the correct physical masses (in GeV or MeV) using Table 3 or 4 of the preprint.
 

@@ -68,7 +68,15 @@ Much larger datasets are avaliable in the form of compressed TXT files. They are
 standard_model_snippets.txt.gz          # snippets afrer the rho-meson re-scaling
 standard_model_snippets_no_norm.txt.gz  # snippets without the rho-meson re-scaling
 ```
-Each line contains a snippet using the PiCAT notations for mathematical functions. On Linux, you can analyze such files without decompression like this:
+
+Download them as:
+
+``` bash
+wget https://github.com/chekanov/GC4PhysicalConstants/raw/refs/heads/main/standard_model_snippets.txt.gz
+wget https://github.com/chekanov/GC4PhysicalConstants/raw/refs/heads/main/standard_model_snippets_no_norm.txt.gz
+```
+
+Each line of such files contains a snippet using the PiCAT notations for mathematical functions. On Linux, you can analyze such files without decompression like this:
 
 ``` bash
 zgrep "m_u = " standard_model_snippets.txt.gz

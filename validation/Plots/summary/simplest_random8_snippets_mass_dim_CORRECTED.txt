@@ -60,10 +60,12 @@ m_t = pow2(7 - \pi) * (\pi * m_b)
 rank 23
 m_W = sqrt(4 / \delta) * m_t / 5
 
-* m_Z = f(m_W)
+# * m_Z = f(m_W)
+m_Z: rank: 20
+m_Z = m_W / (5 + sqrt(\alpha_S)) + m_W
 rank 
 
 total_rank2: 111 (num_eqs:7)
-Variables: delta
-
-Not all equations found!
+Variables: delta, \alpha_S 
+All found! 111+20 = 131 rank
+# Not all equations found!

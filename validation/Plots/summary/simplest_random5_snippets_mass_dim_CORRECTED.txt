@@ -33,7 +33,7 @@ m_Z = m_W + m_W / (6 * \delta)
 
 Total rank: 129 (num_eqs: 8)
 Corrected: 143
-Variables: \delta, \theta_{13}, \alpha^{-1}, \theta_{23}, \theta_{12}
+Variables 5: \delta, \theta_{13}, \alpha^{-1}, \theta_{23}, \theta_{12}
  
 
 SECOND LISTING m_x = f(m_y)
@@ -61,11 +61,8 @@ m_b = m_c * (5 - atan(\pi))
 
 * m_t = f(m_b)
 rank 17
-# too large constant!
-# m_t = (7 + 7) * (m_b * \pi)
+m_t = (7 + 7) * (m_b * \pi)
 # m_t = m_b * 5 * 9 - m_b
-m_t = m_b / (7 * \theta_{13}) / exp(\theta_{13}) rank:23 target:183110.0 [329.0] eval:182958.0 err:0.083010%
-change 17 to 23
 
 
 * m_W = f(m_t)
@@ -79,8 +76,8 @@ m_Z = m_W + m_W / (6 * \delta)
 
 total_rank2: 105 (num_eqs:7)
 found 8!
-corrected rank: 111+23 = 134
-varaibles: \delta, \theta_{12}, \theta_{13}, 
+corrected rank: 128 
+varaibles: \delta, \theta_{12} 
 
-Not all equations found!
+# Not all equations found!
 No, all found!

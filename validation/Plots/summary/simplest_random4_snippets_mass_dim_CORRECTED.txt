@@ -58,7 +58,7 @@ m_s = m_d * (\delta * 8)
 * m_c = f(m_s)
 rank 18
 # too large integer
-# m_c = 4 * (8 * m_s * \delta)
+m_c = 4 * (8 * m_s * \delta)
 # m_c = m_s + m_s * pow3(\alpha_S + 3) rank:20 target:1592.4 [5.7] eval:1590.7 err:0.106757%
 # 18-> 20
 
@@ -82,5 +82,4 @@ rank 23
 m_Z = exp(\delta / 8) * (\delta * m_W)
 
 total_rank2: 155 (num_eqs:8)
-Now rank 160
-Variables 3: \delta, \theta_{12}, \alpha_S 
+Variables 2: \delta, \theta_{12} 

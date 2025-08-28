@@ -1,0 +1,74 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 16
+m_u = pow4(pow2(\theta_{12})) * m_H
+
+m_d: rank: 17
+m_d = m_H * exp(\theta_{13} - 10)
+
+m_s: rank: 17
+m_s = m_H / 9 / (\alpha^{-1} - 3)
+
+m_c: rank: 16
+m_c = m_H / pow4(3 + \alpha_S)
+
+m_b: rank: 17
+m_b = m_H / (\alpha^{-1} / 4 - 3)
+
+m_t: rank: 17
+m_t = m_H * log(3 + \theta_{12})
+
+m_W: rank: 28
+m_W = \delta * m_H / sqrt(atan(\delta * 10))
+m_Z: Not found: Test m_Z instead of m_H as target
+
+Found! m_Z = m_W / (8 + log(\pi)) * (\pi + 7) rank:27 target:91421.0 [2.0] eval:91421.2 err:0.000219%
+
+Total rank: 128 (num_eqs: 7)
+Corrected: 128+27 = 155
+# Not all equations found!
+# found all!
+# Nr of variables 5: \delta,  \theta_{12}, \alpha^{-1}, \theta_{13}, \alpha_S
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 11
+m_u = m_e * (6 - \pi)
+
+* m_d = f(m_u)
+rank 12
+m_d = m_u * (3 / \delta)
+
+* m_s = f(m_d)
+rank 11
+m_s = 9 * (m_d + m_d)
+
+* m_c = f(m_s)
+rank 18
+m_c = atan(\pi) * (10 * m_s)
+
+* m_b = f(m_c)
+rank 16
+m_b = m_c * sqrt(\pi + 6)
+# m_b = m_c + 3 * m_c * \delta
+
+* m_t = f(m_b)
+rank 22
+m_t = \pi * (3 * (4 * m_b)) - m_b
+
+* m_W = f(m_t)
+rank 18
+m_W = atan(\pi / 6) * m_t
+
+* m_Z = f(m_W)
+rank 
+* Found! m_Z = m_W / (8 + log(\pi)) * (\pi + 7) rank:27 target:91421.0 [2.0] eval:91421.2 err:0.000219%
+
+# total_rank2: 108 (num_eqs:7)
+Corrected rank: 108+27 = 135
+Nr of variables 1: \delta
+
+All found!
+# Not all equations found!

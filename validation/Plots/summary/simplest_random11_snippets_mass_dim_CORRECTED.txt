@@ -19,8 +19,8 @@ m_c = m_H / (5 + \theta_{12}) * pow2(\theta_{12}) rank:21 target:1044.7 [3.8] ev
 m_b: rank: 22
 #m_b = \delta * (m_H / (9 + 8 / \delta))
 # min parameters
-#m_b = \theta_{23} * (m_H * sqrt(\theta_{23}) * 3)
-m_b = pow4(\delta) * m_H * (\delta / 5)
+m_b = \theta_{23} * (m_H * sqrt(\theta_{23}) * 3)
+# m_b = pow4(\delta) * m_H * (\delta / 5)
 
 m_t: rank: 14
 m_t = m_H - m_H / \pi + m_H
@@ -34,7 +34,7 @@ m_Z = m_W / (9 - exp(\delta)) + m_W
 
 Total rank: 144 (num_eqs: 8)
 Corrected: 147
-Variables 4: \theta_{12}, \delta, \theta_{13}, \alpha^{-1}
+Variables 4: \theta_{12}, \theta_{23}, \theta_{13}, \alpha^{-1}
 
 SECOND LISTING m_x = f(m_y)
 

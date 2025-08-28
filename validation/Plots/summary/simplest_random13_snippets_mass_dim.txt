@@ -1,0 +1,68 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 16
+m_u = m_H - m_H * cos(\theta_{13})
+m_u = m_H / cos(\theta_{13}) - m_H
+
+m_d: rank: 16
+m_d = m_H / pow3(pow3(\pi))
+
+m_s: rank: 17
+m_s = m_H / pow3(\pi * 3)
+
+m_c: rank: 18
+m_c = m_H / (3 + 9) / 8
+m_c = m_H / 7 / \alpha^{-1} * 10
+
+m_b: rank: 17
+m_b = m_H / pow3(9 / \pi)
+
+m_t: rank: 16
+m_t = \delta * m_H + m_H / 7
+m_t = sqrt(\pi - 1) * m_H
+
+m_W: rank: 16
+m_W = m_H / sqrt(2 - \alpha_S)
+
+m_Z: rank: 27
+m_Z = m_W / (8 + log(\pi)) * (\pi + 7)
+
+Total rank: 143 (num_eqs: 8)
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 10
+m_u = m_e * \pi - m_e
+
+* m_d = f(m_u)
+rank 11
+m_d = (2 + \delta) * m_u
+
+* m_s = f(m_d)
+rank 13
+m_s = 4 * (9 * m_d)
+
+* m_c = f(m_s)
+rank 11
+m_c = (10 - \delta) * m_s
+
+* m_b = f(m_c)
+rank 22
+m_b = (2 + \pi) * (m_c / atan(\pi))
+m_b = 4 * m_c + m_c / (5 + 9)
+
+* m_t = f(m_b)
+rank 21
+m_t = m_b * (6 + pow3(pow4(\delta)))
+
+* m_W = f(m_t)
+rank 25
+m_W = m_t / (sqrt(\pi) * \pi) + m_t / \pi
+
+* m_Z = f(m_W)
+rank 27
+m_Z = m_W / (8 + log(\pi)) * (\pi + 7)
+
+total_rank2: 140 (num_eqs:8)

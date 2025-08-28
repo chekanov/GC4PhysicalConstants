@@ -71,9 +71,12 @@ m_t = 4 * (\delta * m_b * 9)
 rank 
 
 * m_Z = f(m_W)
-rank 
+# rank 
+m_Z: rank: 32
+m_Z = m_W / cos(\theta_{23}) + m_W / (7 - atan(\theta_{23}))
 
 total_rank2: 80 (num_eqs:6)
-Not all equations found!
-1 free paramere: delta
+Corrected: 1 not found
+           Total rank: 80+32 = 112
+2 free paramers: delta, \theta_{23} 
 

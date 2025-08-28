@@ -33,12 +33,11 @@ m_W = m_H / (5 / (4 - \theta_{12}))
 
 # m_Z: Not found: Test m_Z instead of m_H as target
 Found:
-m_Z = m_H / sin(\alpha_S) / log(exp(10 - \alpha_S)) rank:34 target:90954.0 [2.0] eval:90952.0 err:0.002199%
+# m_Z = m_H / sin(\alpha_S) / log(exp(10 - \alpha_S)) rank:34 target:90954.0 [2.0] eval:90952.0 err:0.002199%
 
 
 Total rank: 119  (num_eqs: 7)
-With found relation for m_Z, the total rank is 119+34 = 153 
-Nr of variables 3: \alpha^{-1}, \alpha_S,  \theta_{12},  
+Nr of variables 2: \alpha^{-1},  \theta_{12},  
 Not all equations found!
 -> all found!
 
@@ -83,11 +82,10 @@ m_W = m_H / (5 / (4 - \theta_{12})) rank:17 target:79633.0 [13.0] eval:79633.4 e
 
 
 * m_Z = f(m_W)
-rank 
-m_Z = m_H * cos(sin(\theta_{12})) * cos(sqrt(\theta_{12})) rank:34 target:90954.0 [2.0] eval:90952.3 err:0.001869%
+
 
 total_rank2: 93 (num_eqs:7)
-Nee rank: 93+8+34-5 = 130 
+New rank: 101 
 Number of variables 2: \delta, theta_{12}  
 # Not all equations found!
 All found!

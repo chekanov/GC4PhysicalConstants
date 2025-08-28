@@ -7,7 +7,8 @@ m_d: rank: 30
 # no good - rational constant
 # m_d = m_H / (5 * pow4(5 * 2)) * 2
 # but we cannot find anything better! 
-# Not found?
+# Not found other?
+
 
 m_s: rank: 15
 m_s = m_H * pow3(\theta_{23} + \theta_{23})
@@ -66,11 +67,14 @@ m_t = \pi * m_b * (4 * \pi)
 rank 
 
 * m_Z = f(m_W)
-rank 
+* rank 
+m_Z: rank: 44
+m_Z = m_W / exp(pow3(\alpha_S)) / (pow2(exp(cos(\alpha_S))) * \alpha_S)
 
-total_rank2: 86 (num_eqs:6)
-Real rank: 86+32 = 118
-Not found: 1
-Variables: \theta_{13}, \delta 
+
+# total_rank2: 86 (num_eqs:6)
+Real rank: 86+32 +44 = 162 
+Found all!
+Variables 3: \theta_{13}, \delta, \alpha_S 
 
 Not all equations found!

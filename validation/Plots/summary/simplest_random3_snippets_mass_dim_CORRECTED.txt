@@ -61,9 +61,12 @@ rank 22
 m_W = 2 * m_t - m_t * (2 / \delta)
 
 * m_Z = f(m_W)
-rank 
+# rank 
+m_Z: rank: 38
+m_Z = sqrt(tan(\theta_{23})) / (2 / m_W) + m_W / cos(\theta_{23})
 
-total_rank2: 119 (num_eqs:7)
-Not all equations found!
-Only 1 variable
+
+# total_rank2: 119 (num_eqs:7)
+Corrected: All 8 equations, rank 119+38=157
+Only 2 variables: delta, \theta_{23} 
 

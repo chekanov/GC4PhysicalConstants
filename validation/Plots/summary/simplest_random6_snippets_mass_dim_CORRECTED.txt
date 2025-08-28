@@ -52,7 +52,7 @@ m_d = (4 - \delta) * m_u
 rank 18
 # no good
 # m_s = m_d * pow2(9 / 2)
-# m_s = m_d * sqrt(\alpha^{-1} * 3) rank:17 target:136.1 [1.2] eval:135.848 err:0.185158%
+m_s = m_d * sqrt(\alpha^{-1} * 3) rank:17 target:136.1 [1.2] eval:135.848 err:0.185158%
 
 * m_c = f(m_s)
 rank 16
@@ -78,8 +78,7 @@ m_Z = m_W + m_W / (\theta_{23} + 7) rank:15 target:91248.0 [2.0] eval:91248.2 er
 
 total_rank2: 111 (num_eqs:7)
 corrected: 125 
-variables: delta, \theta_{23}, \alpha^{-1}  
-
-Not all equations found!
+variables 3: delta, \theta_{23}, \alpha^{-1}  
+# Not all equations found!
 Found 8!
 

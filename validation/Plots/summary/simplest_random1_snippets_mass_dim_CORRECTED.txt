@@ -36,7 +36,7 @@ m_Z: rank: 18
 m_Z = m_W / sin(\pi / 3)
 
 Total rank: 137 (num_eqs: 8)
-Corrected: 141
+Corrected: 138
 Variables: delta,\theta_13, \theta_{23},\alpha^{-1} 
 
 SECOND LISTING m_x = f(m_y)
@@ -51,7 +51,7 @@ rank 7
 m_d = m_u * 4
 
 * m_s = f(m_d)
-rank 12
+# rank 12
 # exids 10
 # m_s = m_d * (10 + 7)
 rank 16:
@@ -69,7 +69,7 @@ m_b = m_c + m_c * pow3(pow2(\delta))
 * m_t = f(m_b)
 rank 27
 m_t = m_b * pow2(pow3(\pi)) / exp(\pi)
-m_t = sqrt(pow2(m_b) * pow3(4 + 8))
+#m_t = sqrt(pow2(m_b) * pow3(4 + 8))
 
 * m_W = f(m_t)
 rank 
@@ -80,5 +80,6 @@ rank 18
 m_Z = m_W / sin(\pi / 3)
 
 total_rank2: 112 (num_eqs:7)
-Corrected rank: 116
+Corrected rank: 128 
+variables 1: delta 
 Not all equations found!

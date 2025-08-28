@@ -1,0 +1,72 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 17
+m_u = 8 * (pow4(\theta_{23}) * m_H)
+# m_u = m_H / 3 / \alpha^{-1} / \alpha^{-1}
+
+m_d: rank: 37
+m_d = \theta_{23} * pow2(sqrt(m_H) / (8 + \theta_{23} - 3) / 7)
+
+m_s: rank: 27
+m_s = \theta_{13} * m_H / (2 + sqrt(4 + 6))
+
+m_c: rank: 16
+m_c = m_H / (pow4(\pi) - 2)
+
+m_b: rank: 6
+m_b = \theta_{23} * m_H
+
+m_t: rank: 12
+m_t = 9 * (m_H * \theta_{12})
+
+m_W: rank: 22
+m_W = m_H / (\theta_{12} * 9) + m_H / 4
+
+m_Z: rank: 15
+m_Z = m_W / (9 - \theta_{23}) + m_W
+
+Total rank: 152 (num_eqs: 8)
+Nr of variables 3:  \theta_{13}, \theta_{23}, \theta_{12}
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 11
+# m_u = m_e * (3 + \delta)
+m_u = m_e / (1 - \delta)
+
+* m_d = f(m_u)
+rank 10
+m_d = m_u + m_u * \delta
+
+* m_s = f(m_d)
+rank 16
+m_s = \pi * m_d * (6 + \pi)
+
+* m_c = f(m_s)
+rank 16
+m_c = (7 + (8 - \pi)) * m_s
+
+* m_b = f(m_c)
+rank 12
+m_b = 5 * (\delta * m_c)
+
+* m_t = f(m_b)
+rank 24
+m_t = 7 * (m_b * 8 * tan(\delta))
+
+* m_W = f(m_t)
+rank 29
+m_W = atan(pow3(9 + 4)) * (m_t / 4)
+
+
+* m_Z = f(m_W)
+Found!
+m_Z = m_W / (9 - \theta_{23}) + m_W rank:15 target:91465.0 [2.0] eval:91463.8 err:0.001312%
+
+# total_rank2: 118 (num_eqs:7)
+# all found!
+variables 2: \theta_{23}. \delta
+
+corrected: 118+15 = 133

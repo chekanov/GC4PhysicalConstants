@@ -1,0 +1,94 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 17
+m_u = m_H / (7 / pow4(\alpha_S))
+# m_u = pow2(\theta_{23} / 6) * m_H
+
+m_d: rank: 17
+m_d = m_H * pow3(\theta_{12} / 6)
+
+m_s: rank: 17
+m_s = m_H / 8 / (\alpha^{-1} - 2)
+# minimize nr of variables
+#m_s = m_H / 8 / (\alpha^{-1} - 3)
+#m_s = m_H / pow4(log(\theta_{13}))
+
+m_c: rank: 22
+m_c = sqrt(atan(\alpha^{-1})) * (m_H / \alpha^{-1})
+
+m_b: rank: 12
+m_b = 5 * (m_H / \alpha^{-1})
+
+m_t: rank: 17
+#m_t = (\pi + 10) * m_H / 9
+#m_t = 10 / (10 - \pi) * m_H
+#m_t = atan(\theta_{23} + 9) * m_H
+m_t = m_H * (sqrt(\theta_{12}) * 3)
+#m_t = m_H * atan(10 - \delta)
+#m_t = m_H * atan(9 - \theta_{12})
+#m_t = m_H * atan(\theta_{13} + 9)
+
+m_W: rank: 17
+m_W = m_H / (5 / (4 - \theta_{12}))
+
+# m_Z: Not found: Test m_Z instead of m_H as target
+Found:
+m_Z = m_H / sin(\alpha_S) / log(exp(10 - \alpha_S)) rank:34 target:90954.0 [2.0] eval:90952.0 err:0.002199%
+
+
+Total rank: 119  (num_eqs: 7)
+With found relation for m_Z, the total rank is 119+34 = 153 
+Nr of variables 3: \alpha^{-1}, \alpha_S,  \theta_{12},  
+Not all equations found!
+-> all found!
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 7
+m_u = m_e * 6
+
+* m_d = f(m_u)
+rank 10
+m_d = m_u + m_u * \delta
+
+* m_s = f(m_d)
+rank 12
+No good
+# m_s = (10 + 5) * m_d
+# new rank 17
+m_s = m_d * (10 + log(\alpha^{-1})) rank:17 target:97.97 [0.84] eval:97.3247 err:0.658671%
+
+* m_c = f(m_s)
+rank 11
+m_c = \pi * (\pi * m_s)
+
+* m_b = f(m_c)
+rank 17
+m_b = pow4(\delta) * m_c * 2
+
+* m_t = f(m_b)
+rank 13
+# no good
+m_t = 5 * (8 * m_b)
+# new rank 16
+m_t = m_b * (9 + pow3(\pi)) rank:16 target:154375.0 [277.3] eval:154519.0 err:0.093279%
+
+* m_W = f(m_t)
+rank 23
+No good:
+# m_W = m_t / 2 + m_t / (9 * 7)
+m_W = m_H / (5 / (4 - \theta_{12})) rank:17 target:79633.0 [13.0] eval:79633.4 err:0.000502%
+
+
+* m_Z = f(m_W)
+rank 
+m_Z = m_H * cos(sin(\theta_{12})) * cos(sqrt(\theta_{12})) rank:34 target:90954.0 [2.0] eval:90952.3 err:0.001869%
+
+total_rank2: 93 (num_eqs:7)
+Nee rank: 93+8+34-5 = 130 
+Number of variables 2: \delta, theta_{12}  
+# Not all equations found!
+All found!
+

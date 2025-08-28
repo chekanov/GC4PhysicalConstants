@@ -1,0 +1,76 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 17
+m_u = m_H / pow3(9 / \theta_{12})
+
+m_d: rank: 30
+# no good - rational constant
+# m_d = m_H / (5 * pow4(5 * 2)) * 2
+# but we cannot find anything better! 
+# Not found?
+
+m_s: rank: 15
+m_s = m_H * pow3(\theta_{23} + \theta_{23})
+
+m_c: rank: 26
+m_c = sqrt(sqrt(\alpha_S)) * (pow2(\alpha_S) * m_H)
+
+m_b: rank: 16
+m_b = m_H / \pi / (\pi + 6)
+
+m_t: rank: 15
+m_t = m_H * (\pi - sqrt(\pi))
+
+m_W: rank: 17
+m_W = m_H / ((5 + \pi) / 5)
+
+m_Z: rank: 44
+m_Z = m_W / exp(pow3(\alpha_S)) / (pow2(exp(cos(\alpha_S))) * \alpha_S)
+
+Total rank: 180 (num_eqs: 8)
+Variables: \alpha_S, \theta_{23}, \theta_{12} 
+Not found: 1, real rank 150!
+
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 10
+m_u = m_e + m_e * \pi
+
+* m_d = f(m_u)
+rank 10
+m_d = (m_u + m_u) / \delta
+
+* m_s = f(m_d)
+rank 16
+m_s = (4 + \pi) * m_d * \pi
+
+* m_c = f(m_s)
+rank 16
+m_c = \delta * m_s * (10 + \delta)
+
+* m_b = f(m_c)
+rank 17
+m_b = m_c * (5 - sin(\delta))
+m_b = m_c / 4 + m_c * 4
+
+* m_t = f(m_b)
+rank 17
+m_t = \pi * m_b * (4 * \pi)
+
+* m_W = f(m_t)
+# we found!
+ m_W = m_t / sqrt(5 + \theta_{13}) / cos(sqrt(\theta_{13})) rank:32 target:78341.0 [13.0] eval:78338.7 err:0.002936%
+rank 
+
+* m_Z = f(m_W)
+rank 
+
+total_rank2: 86 (num_eqs:6)
+Real rank: 86+32 = 118
+Not found: 1
+Variables: \theta_{13}, \delta 
+
+Not all equations found!

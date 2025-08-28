@@ -1,0 +1,79 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 17
+m_u = m_H * pow4(\alpha_S) / 8
+
+m_d: rank: 18
+# No, just constants
+# m_d = m_H / exp(4 + 6)
+# m_d = m_H / pow3(7 * 4)
+m_d = m_H * sqrt(\theta_{23}) * pow3(\theta_{23}) rank:21 target:6.221 [0.093] eval:6.1544 err:1.070567%
+
+m_s: rank: 17
+m_s = m_H / 10 / (\alpha^{-1} + 2)
+
+m_c: rank: 16
+# m_c = \alpha_S / ((\alpha_S + 10) / m_H)
+# reduce number of free parameters? Nope, this adds extra!
+# m_c = m_H * pow3(\theta_{23}) + \theta_{23} * m_H / 5 rank:26 target:1594.69 [5.762] eval:1591.84 err:0.178718%
+
+m_b: rank: 17
+m_b = m_H * (3 / pow4(\pi))
+m_b = sqrt(\theta_{13}) / 2 * m_H
+
+m_t: rank: 16
+m_t = m_H + \pi / 7 * m_H
+
+m_W: rank: 24
+m_W = m_H / (7 / 4) * exp(\theta_{13})
+
+m_Z: rank: 29
+m_Z = cos(sin(\theta_{12})) * (5 * (m_W * \theta_{12}))
+
+Total rank: 154 (num_eqs: 8)
+Variables: \alpha_S, \theta_{12}, \theta_{13}, \alpha^{-1}
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 11
+m_u = m_e * (8 - \delta)
+m_u = m_e / (\delta - 1)
+
+* m_d = f(m_u)
+rank 11
+m_d = (3 - \delta) * m_u
+# m_d = (5 - \pi) * m_u
+
+* m_s = f(m_d)
+rank 17
+m_s = 9 * (m_d * sqrt(\pi))
+m_s = 9 * (pow4(\delta) * m_d)
+#m_s = m_d * (5 * (\delta + 2))
+
+* m_c = f(m_s)
+rank 16
+# m_c = (10 + (\pi + 3)) * m_s
+m_c = \pi * m_s * (\pi + 2)
+
+* m_b = f(m_c)
+rank 17
+m_b = sqrt(pow2(m_c) * 7)
+
+* m_t = f(m_b)
+rank 17
+# replace!
+#m_t = \pi * m_b * (8 + 7)
+#m_t = m_b * 8 * 6 - m_b
+m_t = m_b * ((5 + \theta_{12}) * 9) rank:17 target:198339.0 [356.3] eval:198434.0 err:0.047898%
+
+* m_W = f(m_t)
+rank 
+
+* m_Z = f(m_W)
+rank 
+
+total_rank2: 89 (num_eqs:6)
+Number of variables: delta
+Not all equations found!

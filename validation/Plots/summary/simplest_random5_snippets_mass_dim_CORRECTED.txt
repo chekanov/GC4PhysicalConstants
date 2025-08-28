@@ -1,0 +1,86 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 17
+m_u = 2 * m_H * pow4(\theta_{23})
+
+m_d: rank: 11
+m_d = m_H / \alpha^{-1} / \alpha^{-1}
+
+m_s: rank: 17
+m_s = m_H * pow4(\theta_{12}) / 5
+
+m_c: rank: 18
+m_c = 8 * (m_H / 7 / \alpha^{-1})
+# m_c = m_H / (7 + 5) / 10
+
+m_b: rank: 13
+# No division, plus conatnt too larhe
+# m_b = m_H / (8 * 4)
+# m_b = m_H / (tan(\delta) - 5) / (4 - \delta) rank:27 target:4162.95 [6.96] eval:4160.45 err:0.060054%
+13->27
+
+
+m_t: rank: 16
+# m_t = 7 * m_H * \theta_{23} + m_H
+m_t = \delta * m_H - m_H / 7
+
+m_W: rank: 21
+m_W = m_H / sqrt(sqrt(7 - \theta_{13}))
+#m_W = m_H / sqrt(sqrt(\theta_{13} + 7))
+
+m_Z: rank: 16
+m_Z = m_W + m_W / (6 * \delta)
+
+Total rank: 129 (num_eqs: 8)
+Corrected: 143
+Variables: \delta, \theta_{13}, \alpha^{-1}, \theta_{23}, \theta_{12}
+ 
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 10
+m_u = m_e + m_e * \pi
+
+* m_d = f(m_u)
+rank 12
+m_d = m_u / (\delta / 5)
+
+* m_s = f(m_d)
+rank 16
+m_s = m_d * 3 * \pi - m_d
+m_s = m_d * \delta * (\delta + 4)
+
+* m_c = f(m_s)
+rank 17
+m_c = (9 * \delta + 5) * m_s
+
+* m_b = f(m_c)
+rank 17
+m_b = m_c * (5 - atan(\pi))
+
+* m_t = f(m_b)
+rank 17
+# too large constant!
+# m_t = (7 + 7) * (m_b * \pi)
+# m_t = m_b * 5 * 9 - m_b
+m_t = m_b / (7 * \theta_{13}) / exp(\theta_{13}) rank:23 target:183110.0 [329.0] eval:182958.0 err:0.083010%
+change 17 to 23
+
+
+* m_W = f(m_t)
+rank 
+found:
+m_W = m_t / \theta_{12} / 10 * cos(\theta_{12}) rank:23 target:82020.0 [13.0] eval:82007.4 err:0.015362%
+
+* m_Z = f(m_W)
+rank 16
+m_Z = m_W + m_W / (6 * \delta)
+
+total_rank2: 105 (num_eqs:7)
+found 8!
+corrected rank: 111+23 = 134
+varaibles: \delta, \theta_{12}, \theta_{13}, 
+
+Not all equations found!
+No, all found!

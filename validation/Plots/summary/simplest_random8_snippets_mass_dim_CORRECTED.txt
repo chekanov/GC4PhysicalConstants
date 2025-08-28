@@ -1,0 +1,69 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 15
+m_u = pow4(\theta_{23} + \theta_{23}) * m_H
+
+m_d: rank: 16
+m_d = m_H / pow2(\alpha^{-1} - 7)
+
+m_s: rank: 22
+m_s = \theta_{13} * (exp(\theta_{13} - 2) * m_H)
+
+m_c: rank: 17
+m_c = \theta_{23} * m_H * (\theta_{23} * 10)
+
+m_b: rank: 12
+m_b = m_H / \pi / 9
+
+m_t: rank: 16
+# m_t = m_H * (2 - sqrt(\alpha_S))
+m_t = m_H * (\delta + atan(\delta))
+
+m_W: rank: 16
+m_W = m_H / sqrt(3 - \delta)
+
+m_Z: rank: 20
+m_Z = m_W / (5 + sqrt(\alpha_S)) + m_W
+
+Total rank: 134 (num_eqs: 8)
+Varaibles 4: \delta, \alpha_S, \theta_{23}, \theta_{13}
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 11
+m_u = m_e * (6 - \pi)
+
+* m_d = f(m_u)
+rank 11
+m_d = (4 + \delta) * m_u
+#m_d = (8 - \pi) * m_u
+
+* m_s = f(m_d)
+rank 12
+m_s = \pi * (m_d * 4)
+
+* m_c = f(m_s)
+rank 17
+m_c = 9 * (m_s / pow3(\delta))
+
+* m_b = f(m_c)
+rank 16
+m_b = m_c / \delta + 3 * m_c
+
+* m_t = f(m_b)
+rank 21
+m_t = pow2(7 - \pi) * (\pi * m_b)
+
+* m_W = f(m_t)
+rank 23
+m_W = sqrt(4 / \delta) * m_t / 5
+
+* m_Z = f(m_W)
+rank 
+
+total_rank2: 111 (num_eqs:7)
+Variables: delta
+
+Not all equations found!

@@ -1,0 +1,72 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 17
+m_u = pow3(\theta_{23}) / 7 * m_H
+m_u = pow4(\theta_{23}) * m_H * 3
+
+m_d: rank: 24
+m_d = 9 * 2 * (m_H * sin(\pi))
+
+m_s: rank: 16
+m_s = m_H / pow4(\delta + 5)
+
+m_c: rank: 16
+m_c = m_H / (pow4(\pi) - 9)
+
+m_b: rank: 17
+m_b = 6 * (m_H / (\alpha^{-1} + 8))
+m_b = m_H * pow3(\delta) / 9
+m_b = m_H / (exp(\pi) + 1)
+
+m_t: rank: 21
+m_t = 6 * (m_H / (8 - \alpha_S)) + m_H
+m_t = m_H - m_H * sin(4 + \theta_{13})
+m_t = m_H - m_H / log(pow4(\delta))
+m_t = m_H - sin(sqrt(\alpha^{-1})) * m_H
+
+m_W: rank: 23
+m_W = m_H * pow2(sin(cos(\alpha_S)))
+
+m_Z: rank: 27
+m_Z = sin(9 + \alpha^{-1}) * m_W + m_W / 8
+
+Total rank: 161 (num_eqs: 8)
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 13
+m_u = 10 / (3 / m_e)
+m_u = 7 * (m_e / 2)
+
+* m_d = f(m_u)
+rank 6
+m_d = m_u * \pi
+
+* m_s = f(m_d)
+rank 15
+m_s = pow2(\pi) * (m_d + m_d)
+
+* m_c = f(m_s)
+rank 17
+m_c = m_s * (7 * \delta + 7)
+
+* m_b = f(m_c)
+rank 20
+m_b = m_c * (4 + (pow3(\delta) - \delta))
+m_b = m_c + (m_c + m_c) / cos(\delta)
+
+* m_t = f(m_b)
+rank 17
+m_t = m_b * ((4 + \delta) * 9)
+
+* m_W = f(m_t)
+rank 16
+m_W = m_t / sqrt(7 - \delta)
+
+* m_Z = f(m_W)
+rank 
+
+total_rank2: 104 (num_eqs:7)
+Not all equations found!

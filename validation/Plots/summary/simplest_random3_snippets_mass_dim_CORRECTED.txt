@@ -1,0 +1,69 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 18
+m_u = 6 * (m_H * sin(\pi))
+
+m_d: rank: 17
+m_d = 3 * (pow2(\theta_{13}) * m_H)
+
+m_s: rank: 23
+m_s = m_H * exp(\alpha_S / 10 - 8)
+
+m_c: rank: 12
+m_c = m_H * (\theta_{23} / 5)
+
+m_b: rank: 17
+m_b = 4 * m_H / (\alpha^{-1} + 9)
+
+m_t: rank: 15
+m_t = m_H + m_H / (10 - \theta_{12})
+
+m_W: rank: 17
+m_W = 6 / \pi * m_H / \pi
+
+m_Z: rank: 38
+m_Z = sqrt(tan(\theta_{23})) / (2 / m_W) + m_W / cos(\theta_{23})
+
+Total rank: 157 (num_eqs: 8)
+Variables: \theta_{13}, \alpha_S, \theta_{23}, \alpha^{-1}, \theta_{12}
+
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 10
+m_u = m_e + \pi * m_e
+
+* m_d = f(m_u)
+rank 11
+m_d = \delta * (\delta * m_u)
+
+* m_s = f(m_d)
+rank 11
+m_s = m_d + 10 * m_d
+
+* m_c = f(m_s)
+rank 22
+m_c = pow4(10 / \pi) / (\pi / m_s)
+
+* m_b = f(m_c)
+rank 20
+m_b = m_c * pow2(\pi - 5) - m_c
+
+* m_t = f(m_b)
+rank 23
+m_t = 4 * (10 * m_b) + m_b / 3
+m_t = 4 * (10 * m_b) + m_b / 4
+m_t = m_b * (exp(pow2(\delta)) * 6)
+
+* m_W = f(m_t)
+rank 22
+m_W = 2 * m_t - m_t * (2 / \delta)
+
+* m_Z = f(m_W)
+rank 
+
+total_rank2: 119 (num_eqs:7)
+Not all equations found!
+Only 1 variable
+

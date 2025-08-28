@@ -1,0 +1,84 @@
+FIRST LISTING m_x = f(m_H)
+
+m_u: rank: 17
+m_u = m_H / exp(\pi + 8)
+
+m_d: rank: 21
+# number > 10.
+# m_d = m_H / (\alpha^{-1} - (6 + 6)) / \alpha^{-1}
+# rank 22
+m_d = m_H * \theta_{13} / 10 / (\theta_{13} + 4) rank:22 target:6.969 [0.104] eval:6.91178 err:0.821065%
+
+m_s: rank: 17
+m_s = pow3(\theta_{23}) * (m_H * 9)
+
+m_c: rank: 11
+m_c = m_H / (\alpha^{-1} - 5)
+
+m_b: rank: 22
+m_b = m_H / \pi / (\pi * 2 + 4)
+m_b = sin(\theta_{12}) * (m_H / (7 - \theta_{12}))
+
+m_t: rank: 13
+# m_t = 9 * (m_H / 7) - cannot use. Rational number 
+m_t = m_H * \theta_{23} * 6 + m_H rank:16 target:154797.0 [278.0] eval:154841.0 err:0.028424%
+Use 16 instead! 
+
+m_W: rank: 18
+# m_W = m_H * sqrt(3 / 7)
+# m_W = m_H / atan(exp(\pi))
+# good!
+m_W = tan(\delta) / 4 * m_H
+
+m_Z: rank: 18
+# m_Z = m_W * sqrt(8 / 6)
+# good!
+m_Z = m_W / sin(\pi / 3)
+
+Total rank: 137 (num_eqs: 8)
+Corrected: 141
+Variables: delta,\theta_13, \theta_{23},\alpha^{-1} 
+
+SECOND LISTING m_x = f(m_y)
+
+* m_u = f(m_e)
+rank 12
+# m_u = 4 / (\delta / m_e)
+m_u = m_e * exp(\delta)
+
+* m_d = f(m_u)
+rank 7
+m_d = m_u * 4
+
+* m_s = f(m_d)
+rank 12
+# exids 10
+# m_s = m_d * (10 + 7)
+rank 16:
+m_s = m_d * (\delta + \delta) * 7 rank:16 target:118.34 [1.01] eval:117.665 err:0.570390%
+
+
+* m_c = f(m_s)
+rank 16
+m_c = 8 * m_s - m_s / \pi
+
+* m_b = f(m_c)
+rank 20
+m_b = m_c + m_c * pow3(pow2(\delta))
+
+* m_t = f(m_b)
+rank 27
+m_t = m_b * pow2(pow3(\pi)) / exp(\pi)
+m_t = sqrt(pow2(m_b) * pow3(4 + 8))
+
+* m_W = f(m_t)
+rank 
+
+* m_Z = f(m_W)
+rank 18
+# m_Z = m_W * sqrt(8 / 6)
+m_Z = m_W / sin(\pi / 3)
+
+total_rank2: 112 (num_eqs:7)
+Corrected rank: 116
+Not all equations found!

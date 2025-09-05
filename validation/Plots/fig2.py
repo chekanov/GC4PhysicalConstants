@@ -26,12 +26,13 @@ figdir="figs/"
 name=os.path.basename(__file__)
 epsfig=figdir+name.replace(".py",".eps")
 
-nameX="Nr of not found equations"
-nameY="(Analytic rank) x (Nr of parameters)"
+nameX="Nr of missing equations"
+# nameY="Complexity"
+nameY="C_{b}"
 Ymin=61  
 Ymax=600-1 
-Xmin=-0.2    
-Xmax=2.2    
+Xmin=-0.1    
+Xmax=1.2    
 
 ######################################################
 gROOT.SetStyle("Plain");
@@ -52,14 +53,15 @@ ax=h.GetXaxis(); ax.SetTitleOffset(1.1)
 ay=h.GetYaxis();
 ay.SetTitle( nameY );
 ax.SetTitle( nameX );
-ay.SetTitleSize( 0.05 );
-ax.SetTitleSize( 0.05 );
-
-ax.SetNdivisions(104)
+ay.SetTitleSize( 0.08 );
+ax.SetTitleSize( 0.055 );
+ay.SetLabelSize( 0.055 );
+ax.SetLabelSize( 0.055 );
+ax.SetNdivisions(102)
 
 
 ax.SetTitleOffset(1.1)
-ay.SetTitleOffset(1.4)
+ay.SetTitleOffset(1.1)
 ay.Draw("same")
 h.Draw()
 
@@ -120,7 +122,7 @@ def getData(xfile, which=4, color=1, ctype=24):
 ran1=getData("randomB.csv")
 ran1.Draw("p")
 
-leg2=TLegend(0.3, 0.75, 0.95, 0.88);
+leg2=TLegend(0.35, 0.7, 0.95, 0.85);
 leg2.SetBorderSize(0);
 leg2.SetTextFont(62);
 leg2.SetFillColor(10);

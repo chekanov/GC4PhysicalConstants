@@ -1,0 +1,147 @@
+/* 
+
+  Identify constant - generate the experiment files in Picat.
+
+  There are 23 constants in constants.py
+  Ttesting all possible single and pairs combinations will yield 
+     23*(22*23/2) = 5819 
+  experiment files.
+
+  Note: This will takes some time.
+
+  After some runs Sergei added rule to remove experiments with masses vs alpha-1 and alpha_S
+  """
+  I would always have a preference to have masses with masses, and angles with angles..
+  Adding alpha_S and alpha-1 to masses do not have much sense.  So, it would be better to veto
+  such solutions.
+   (1) If we see "m" on the left and "alpha" on the right -> skip it
+   (2) if we see "alpha" on the left, and "m" on the right -> skip it
+  
+  As for the angles - I really do not know. I think, in principles, theta angle
+  may have dependence on the mass. Let's try first these 2 simple "skip" rules.
+  We can say in the paper that we will avoid any theoretical assamptions, since
+  our goal is to provide the  building analytic building blocks for theorists,
+  without any theoretical background.
+  """
+
+
+  This program was created by Hakan Kjellerstrand, hakank@gmail.com
+  See also my Picat page: http://www.hakank.org/picat/
+
+*/
+
+import util.
+
+main => go.
+
+go ?=>
+  File = "constants.py",
+  Constants = [Key=Value :  Line in read_file_lines(File),
+                            find(Line,"constant",_,_),
+                            [Key,Value] = split(Line,"="), Value != "{}"],
+  println(constants=Constants=Constants.len),
+
+  Cs = new_map(),
+  Prec = new_map(),
+  NameMap = new_map(),
+  SymbolMap = new_map(),
+  Alphas = [],
+  Masses = [],
+  foreach(Name=C in Constants)
+    println([name=Name,c=C]),
+    append2(["constant[\"",N,"\"]",_],Name),
+    append2([_,"[",CC,"]",_],C),
+    Const = split(CC,", \""),
+    println(N=Const),    
+    % Cs.put(N,Const),
+    Cs.put(N,Const[1..2]),
+    NameMap.put(Const[1],N),
+    Prec.put(Const[1],Const[2]),
+    writeln(const3=Const[3]),
+    if once(append(_,"alpha",_,Const[3])) then
+      Alphas := Alphas ++ [Const[1]]
+    end,
+    if once(append("m_",_,Const[3])) then
+      Masses := Masses ++ [Const[1]]
+    end,
+    
+    SymbolMap.put(N,Const[3]),
+    nl,
+  end,
+  println(alphas=Alphas),
+  println(masses=Masses),  
+  println(cs=Cs),
+  println(nameMap=NameMap),
+  nl,
+  L = Cs.values.map(first),
+  println(l=L=L.len=L.remove_dups.len),
+  MaxCard = 2,
+  NumExperiments = 0,
+
+  println(symbolMap=SymbolMap),
+  % halt,
+  
+  % numExperiments = 5819
+  Count = 0,
+  foreach(Name=[Constant,Precision] in Cs)
+    nl,
+    Symbol = SymbolMap.get(Name),
+    println([name=Name,symbol=Symbol,constant=Constant,precision=Precision]),
+    select(Constant,L,Rest),
+    println(rest=Rest),
+/*    
+    if append("m",_,Symbol) then
+      % Mass: weed out any experiments with alpha    
+      println("Mass: Skip mass vs alpha"),
+      Rest := [R :  R in Rest, not membchk(R,Alphas)]
+    elseif append(_,"alpha",_,Symbol) then
+      % Alpha: Weed out any experiments with mass
+      println("Alpha: Skip alpha vs mass"),
+      Rest := [R :  R in Rest, not membchk(R,Masses)]
+    end,
+*/
+
+    Ps = [ C : C in power_set(Rest), C.len > 0, C.len <= MaxCard],    
+    println(Ps),
+    NumExperiments := NumExperiments + Ps.len,
+    foreach(P in Ps)
+      println([name=Name,constant=Constant,precision=Precision,vs,P,[NameMap.get(PP) : PP in P]]),
+      generate_file(NameMap,Constant,P,Precision),
+      Count := Count + 1
+    end,
+    nl
+  end,
+  println(numExperiments=NumExperiments),
+  println(count=Count),
+  nl.
+go => true.
+
+%
+% Generate the experiments.
+% Note: The other (general) parameters are in a separate parameter file.
+%
+generate_file(NameMap,Target,ForcedConstants,Precision) =>
+  Dir = "configs", % Directory of config files
+  File = "experiment_"++Target.to_string++"_vs_"++[F.to_string : F in ForcedConstants].join('_')++".conf",
+  println(file=File),
+  L = "",
+  C = 1,
+  foreach(F in ForcedConstants)
+    L := L ++ "Input_constant"++C.to_string++"="++F.to_string++"\n",
+    C := C + 1
+  end,
+  L := L ++ "Output_constant="++Target.to_string++"\n",
+  L := L ++ "Output_constant_error="++Precision.to_string++"\n",
+  println(L),
+  FD = open(Dir ++ "/" ++ File,write),
+  println(FD,L),
+  close(FD),
+  nl.
+
+
+append2(ListOfLists, List) :-
+    append2_(ListOfLists, List).
+append2_([], []).
+append2_([L|Ls], As) :-
+    append(L, Ws, As),
+    append2_(Ls, Ws).

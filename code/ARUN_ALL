@@ -1,0 +1,44 @@
+#!/bin/bash
+PWD=`pwd`
+
+
+# Specify run from 0, 1 (if 2 nodes)
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied!"
+    CURRENT_RUN=0
+fi
+
+CURRENT_RUN=$1
+
+
+# Total number of runs. we will run on 2 nodes
+NODES=2 
+echo "Run=$CURRENT_RUN from $NODES total"
+
+
+ls -1 configs/*conf > data.in 
+echo "data.in ready" 
+
+Nlines=`cat data.in | wc -l`
+echo "Nr of files=$Nlines"
+
+INPUTTEM=inputs/list
+Splits=$(( ($Nlines + $NODES -1)/$NODES))
+echo "Split data on $Splits input files for $NODES CPUs" 
+split -l${Splits} -d data.in $INPUTTEM
+
+
+# run jobs for current runs
+while read p; do
+  echo "$p"
+  ./ARUN $p
+done < "${INPUTTEM}0${CURRENT_RUN}"
+
+
+
+#for filename in configs/*conf; do
+      #config="${filename##*/}"
+      #echo "Run ARUN on $config"
+      #./ARUN $config
+#done

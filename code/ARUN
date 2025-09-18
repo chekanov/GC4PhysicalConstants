@@ -1,0 +1,64 @@
+#!/bin/bash
+# Run 10 times on the same input confi file
+
+PWD=`pwd`
+
+INPUT=$1
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+    INPUT="configs/experiment_0.0006591_vs_0.002786_0.003732.conf"
+fi
+
+part1=$(dirname "$INPUT")
+INPUT=$(basename "$INPUT")
+fname=${INPUT%.*}
+
+PICAT="../Picat/picat" 
+
+#echo "$PICAT -log identify_constant3.pi identify_constant_experiment1.param configs/$INPUT > out/sys1/$fname.txt 2>&1"
+
+
+for i in {1..34}
+do
+    echo "Start $i"
+    mkdir -p out/sys$i
+    XRAND=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6`
+    sleep 0.1
+    nohup $PICAT -log identify_constant3.pi identify_constant_experiment1.param configs/$INPUT > out/sys${i}/${fname}_${XRAND}.txt 2>&1 &
+done
+
+sleep 1
+
+# clean 5% of time...
+r=$(( $RANDOM % 100 ));
+b=95
+if [ "$r" -gt "$b" ]; then
+   echo "Clean 5% of time..."
+   find ./out/  -type f -exec grep -q 'No found functions' '{}' \; -delete
+   find ./out/  -type f -exec grep -q 'status = time_out' '{}' \; -delete
+fi
+
+
+# echo "Clean empty files.."
+# find ./out/  -type f -exec grep -q 'No found functions' '{}' \; -delete
+# find ./out/  -type f -exec grep -q 'status = time_out' '{}' \; -delete
+
+
+#renice -n 19 `ps -o pid -C Picat/picat`
+renice -n 19 `ps -o pid -C picat`
+
+
+T=`date`
+echo "Launching at $T"
+NJOBS=`ps -u $USER | grep -e "picat" | wc -l`
+while [ $NJOBS -gt 0  ]
+do
+    NJOBS=`ps -u $USER  | grep -e "picat" | wc -l`
+    T=`date`
+    echo "Running $NJOBS jobs: $T"
+    sleep 5
+done
+echo "Done!"
+date
+

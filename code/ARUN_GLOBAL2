@@ -1,0 +1,6 @@
+#!/bin/bash
+PWD=`pwd`
+
+# Run on server 2 
+nohup ./ARUN_ALL 1 > inputs/log01.txt 2>&1 & 
+ 

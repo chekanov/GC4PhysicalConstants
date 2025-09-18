@@ -1,0 +1,142 @@
+/* 
+
+  Identify constant wrapper in Picat.
+
+  This version read a 
+  - parameter file with general parameters
+  - the experiment file containing 
+    * the (forced) inputconstants
+    * the output (target) constant
+    * the accepted error 
+
+
+  Run as 
+  $ picat -log identify_constant3.pi <parameter file> <configfile>
+
+  Example:
+  $ picat -log identify_constant3.pi identify_constant_experiment1.param experiment_0.00297_vs_0.003508_0.8587.conf
+
+  This program was created by Hakan Kjellerstrand, hakank@gmail.com
+  See also my Picat page: http://www.hakank.org/picat/
+
+*/
+
+import util.
+
+main => go.
+
+main([ParamFile,ExperimentFile]) =>
+  once(identify_constant(ParamFile,ExperimentFile)),
+  nl.  
+main(_) =>
+  println("\nSyntax: picat <parameter file> <experiment file>\n"),
+  halt.
+
+% Run an experiment
+identify_constant(ParamFile,ExperimentFile) =>
+  garbage_collect(400_000_000),
+  % println([param_file=ParamFile,experiment_file=ExperimentFile]),
+
+  Experiment = read_experiment_file(ExperimentFile),
+  % println(experiment=Experiment),
+  Inputs    = Experiment.get(inputs),  
+  Output    = Experiment.get(output),
+
+  println(inputs=Inputs),
+  println(output=Output),
+  println(output_error=Experiment.get(output_error)),
+
+  Params = read_param_file(ParamFile),
+  % println(params=Params),
+  
+  % General parameters
+  Functions = Params.get(functions),
+  Constants = Params.get(constants),  
+  MaxSize   = Params.get(max_size),
+  Timeout   = Params.get(local_timeout),
+  
+  % This is a special for these kind of simulations
+  Params.put(fail_at_end,false),
+  Params.put(no_restart,true),  
+  Params.put(stop_criteria,at_least_one_solution), % only one solutions (together with small num_gens)
+  Params.put(approx,Experiment.get(output_error)),
+  
+  foreach(C in Inputs, not membchk(C,Constants))
+    Constants := Constants ++ [C]
+  end,
+  Params.put(force_constants,Inputs),
+  
+  cl("symbolic_regression.pi"),
+    
+  if not Params.has_key(random_seed) then
+    Seed = random2(),
+    printf("No random_seed. Setting seed %d\n", Seed),
+    Params.put(random_seed,Seed)
+  end,
+
+  Data = [
+    [[1],Output]
+  ],
+  Vars = [],
+  Unknown = [1],
+  Ops = Functions,
+  
+  TimeoutMillis = Timeout*1000, % in millis
+  time(time_out(run(Data,Vars,Unknown,Ops,Constants,MaxSize,Params),TimeoutMillis,Status)),
+  println(status=Status),
+  nl.
+
+% Read the experiment file
+read_experiment_file(File) = Params =>
+  Config = [Key=Value :  Line in read_file_lines(File), [Key,Value] = split(Line,"= ")],
+  Inputs = [Value.to_number : Key=Value in Config, find(Key,"Input_constant",_,_)],
+  Output       = get_number(Config,"Output_constant"),
+  OutputError  = get_number(Config,"Output_constant_error"),
+  Params = new_map([
+    inputs=Inputs,
+    output=Output,
+    output_error=OutputError
+  ]).
+
+% The general parameter file
+read_param_file(File) = Params =>
+
+  Config = [Key=Value :  Line in read_file_lines(File), [Key,Value] = split(Line,"= ")],
+  println(config=Config),
+  Functions    = get_atoms(Config,"Functions"),
+  Constants    = get_numbers(Config,"Constants"),
+  InitSize     = get_number(Config,"Init_Size"),
+  MaxSize      = get_number(Config,"Max_Size"),  
+  NumGens      = get_number(Config,"Num_Gens"),
+  Timeout      = get_number(Config,"Timeout"),
+  ShowOnlyGood = get_atom(Config,"Show_Only_Good"),
+
+  Params = new_map([
+             functions=Functions,
+             constants=Constants,
+             init_size=InitSize,
+             max_size=MaxSize,
+             num_gens=NumGens,
+             show_only_good=ShowOnlyGood,
+             % Have to rename this to not use the timeout in symbolic_regression.pi
+             local_timeout=Timeout
+  ]),
+
+  % Optional  
+  RandomSeed = get_number_opt(Config, "RandomSeed"),
+  if nonvar(RandomSeed) then Params.put(random_seed,RandomSeed) end.
+
+
+
+
+% Get an atom or number from the config
+get_atom(Config,Id)   = [Value.to_atom : Key=Value in Config, Key == Id].first.
+get_number(Config,Id) = [Value.to_number : Key=Value in Config, Key == Id].first.
+
+get_number_opt(Config,Id) = cond(V.len > 0, V.first.to_number,_) =>
+  V = [Value : Key=Value in Config, Key == Id].
+
+
+% Get a list of atoms / numbers from the config
+get_atoms(Config,Id)   = [ [V.to_atom : V in Value.split(", ")] : Key=Value in Config, Key == Id].first.
+get_numbers(Config,Id) = [ [V.to_number : V in Value.split(", ")] : Key=Value in Config, Key == Id].first.

@@ -99,6 +99,11 @@ Note that this method of rescaling does not affect snippets which already pass t
 
 As a test, the GC analysis was also performed on the Standard Model inputs without normalization of masses by the rho(770) mass. See the file ```standard_model_snippets_original.json.gz``` or ```standard_model_snippets_no_norm.txt.gz```. The vast majority of snippets do not pass dimensional analysis, and the snippets for the electron and muon masses cannot be recovered due to the very large precision on such masses. Several interesting relations that pass the dimensional analysis can also be recovered in the original analysis with the rescaled masses, therefore, the method using the original masses is less intresting. We can send the file without rescaled masses by requests.
 
+## Code availability
+
+The analysis code to createanalytic snippets from GC 
+is located in the directory "code" (for the dimensionless constants).
+
 
 ## Notes
 

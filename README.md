@@ -4,7 +4,7 @@
 
 This repository contains analytic expressions with relationships among the fundamental constants of the Standard Model. These expressions are created through generic computation (GC), which is part of the artificial intelligence (AI) field. The goal of this library is to identify analytic patterns and relationships among fundamental physical constants, or to use these expressions in constructing models with a minimal number of free parameters. These data can serve as inputs for several AI techniques, including generative AI algorithms, for the analysis of patterns or structures that may reflect underlying relationships between Standard Model parameters in high-dimensional functional space.
 
-If you use these data with analytic functions, please cite the following work:
+If you use these data with analytic functions in your analysis, please cite the following work:
 
 > **"Discovering the Underlying Analytic Structure within Standard Model Constants Using Artificial Intelligence"**  
 > S. V. Chekanov and H. Kjellerstrand, HEP-ANL-197373 (2025).  
@@ -27,6 +27,31 @@ If you use these data with analytic functions, please cite the following work:
 }
 ```
 </details>
+
+
+If you are intrested in a more physics oriented studied, where this dataset was applied to Standard Model fundamental constants,  please cite the following work:
+
+> **"Evidence of Relationships Among Fundamental Constants of the Standard Model"**  
+> S. V. Chekanov and H. Kjellerstrand, HEP-ANL-ANL-198667 (2025).  
+> [arXiv:2509.07713](https://arxiv.org/abs/2509.07713) (Submitted to a journal)
+
+<details>
+  <summary><i>View BibTex Entry</i></summary>
+
+```bibtex
+@article{Chekanov:2025pmb,
+    author = "Chekanov, S. V. and Kjellerstrand, H.",
+    title = "{Evidence of Relationships Among Fundamental Constants of the Standard Model}",
+    eprint = "2509.07713",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
+    reportNumber = "HEP-ANL-198667",
+    month = "9",
+    year = "2025"
+}
+```
+</details>
+
 
 ---
 

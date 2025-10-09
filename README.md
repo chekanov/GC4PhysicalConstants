@@ -29,7 +29,7 @@ If you use these data with analytic functions in your analysis, please cite the 
 </details>
 
 
-If you are intrested in a more physics oriented studied, where this dataset was applied to Standard Model fundamental constants,  please cite the following work:
+If you are intrested in a more physics oriented study, where this dataset was applied to Standard Model fundamental constants,  please cite the following work:
 
 > **"Evidence of Relationships Among Fundamental Constants of the Standard Model"**  
 > S. V. Chekanov and H. Kjellerstrand, HEP-ANL-ANL-198667 (2025).  

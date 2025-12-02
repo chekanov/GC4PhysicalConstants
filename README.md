@@ -7,8 +7,8 @@ This repository contains analytic expressions with relationships among the funda
 If you use these data with analytic functions in your analysis, please cite the following work:
 
 > **"Discovering the Underlying Analytic Structure within Standard Model Constants Using Artificial Intelligence"**  
-> S. V. Chekanov and H. Kjellerstrand, HEP-ANL-197373 (2025).  
-> [arXiv:2507.00225](https://arxiv.org/abs/2507.00225) (Submitted to a journal)
+> S. V. Chekanov and H. Kjellerstrand, [Particles (2025), Volume 8, Issue 4, 95](https://www.mdpi.com/2571-712X/8/4/95),
+> also [arXiv:2507.00225](https://arxiv.org/abs/2507.00225), 
 
 <details>
   <summary><i>View BibTex Entry</i></summary>
@@ -24,6 +24,13 @@ If you use these data with analytic functions in your analysis, please cite the 
     reportNumber = "HEP-ANL-197373",
     month = "6",
     year = "2025"
+    journal = {Particles},
+    volume = {8},
+    number = {4},
+    pages = {95},
+    URL = {https://www.mdpi.com/2571-712X/8/4/95},
+    ISSN = {2571-712X},
+     DOI = {10.3390/particles8040095}
 }
 ```
 </details>

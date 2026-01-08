@@ -40,7 +40,7 @@ If you are intrested in a more physics oriented study, where these datasets and 
 
 > **"Evidence of Relationships Among Fundamental Constants of the Standard Model"**  
 > S. V. Chekanov and H. Kjellerstrand, HEP-ANL-ANL-198667 (2025).  
-> [arXiv:2509.07713](https://arxiv.org/abs/2509.07713) (Submitted to a journal)
+> [arXiv:2509.07713](https://arxiv.org/abs/2509.07713)
 
 <details>
   <summary><i>View BibTex Entry</i></summary>
@@ -84,7 +84,7 @@ with gzip.open(jsonfilename, 'r') as fin:
 ```
 Here, ```data``` is a Pyhon dictionary, where the keys range from 6 to 70, representing analytic ranks. If you use other programs, simply ```gunzip``` this JSON file and read it as a text file.
 
-Each value associated with a key is a list structured as follows:
+Each value associated with a key is a list, which is structured as follows:
 
 ```
 [equation,error,predicted,target,rank]
@@ -108,7 +108,7 @@ wget https://github.com/chekanov/GC4PhysicalConstants/raw/refs/heads/main/standa
 wget https://github.com/chekanov/GC4PhysicalConstants/raw/refs/heads/main/standard_model_snippets_no_norm.txt.gz
 ```
 
-Each line of such files contains a snippet using the PiCAT notations for mathematical functions. On Linux, you can analyze such files without decompression like this:
+Each line of such files contains a snippet using the PiCat notations for mathematical functions. On Linux/Unix, you can analyze such files without decompression like this:
 
 ``` bash
 zgrep "m_u = " standard_model_snippets.txt.gz
@@ -135,16 +135,13 @@ The vast majority of snippets do not pass dimensional analysis, and the snippets
 
 ## Code availability
 
-The analysis code to createanalytic snippets from GC 
-is located in the directory "code" (for the dimensionless constants).
-
+The analysis code to createanalytic snippets from GC  is located in the directory "code" (for the dimensionless constants).
 
 ## Notes
 
 (1) The files ```standard_model_snippets.json.gz``` and ```standard_model_snippets.txt.gz```  are  referred to as the *rho-meson snippet listing* since it uses the rho-meson mass for removing mass units and for error smoothing. The latter implies reducing the variability of errors and making them more uniform. This particle used for rescaling must not be fundamental, because using any fundamental mass would automatically exclude it from the dataset. We cannot use the Planck scale mass due to its extremely large value for genetic computing (limitted by the maximum value of 10^12). However, we are open to using other non-fundamental particles as well.
 
 The file ```standard_model_snippets_phi1020.txt.gz``` is referred to as the *phi-meson snippet listing* since it uses the phi(1020)-meson mass.
-
 
 (2) It should be emphasized that the presence of the rho-meson mass (or any other non-fundamental particle used to obtain dimensionless constants) is merely a convenient method for deriving relationships in GC without violating dimensional consistency. It serves as an auxiliary parameter. In the final model or theory, the rho-meson mass must disappear after appropriate variable substitutions. All obtained relations can be converted to the correct physical masses (in GeV or MeV) using Table 3 or 4 of the preprint.
 
